@@ -1,0 +1,5 @@
+1.修改mvc中的解析json的工具使用fastjson
+2.springboot + devtools（热部署）
+3.springboot中有监控 (访问路径自己去百度)
+4.在读取.Properties的时候要注意以utf-8的格式去读取
+5.在获取setting.properties的时候先会去当前的项目中读取,如果没有获取到的话,获取nt_parent项目中获取
