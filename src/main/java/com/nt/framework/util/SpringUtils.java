@@ -5,12 +5,11 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
-import org.springframework.util.Assert;
 
 /**
  * 
- * @ClassName: SpringUtil
- * @Description: springUtil工具类
+ * @ClassName: SpringUtils
+ * @Description: springUtils工具类
  * @author: jinzhaopo
  * @version: V1.0
  * @date: 2017年8月31日 下午2:19:39
@@ -26,6 +25,13 @@ public class SpringUtils implements DisposableBean, ApplicationContextAware {
 		this.applicationContext = applicationContext;
 	}
 
+	/**
+	 * 
+	 * @Title: destroy
+	 * @Description: 销毁对象
+	 * @throws Exception
+	 * @see org.springframework.beans.factory.DisposableBean#destroy()
+	 */
 	@Override
 	public void destroy() throws Exception {
 		applicationContext = null;
@@ -43,7 +49,6 @@ public class SpringUtils implements DisposableBean, ApplicationContextAware {
 	 * @return: Object
 	 */
 	public static Object getBean(String name) {
-		Assert.hasText(name, "SpringUtil---getBean:名称不能为空");
 		return applicationContext.getBean(name);
 	}
 
@@ -60,8 +65,6 @@ public class SpringUtils implements DisposableBean, ApplicationContextAware {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static Object getBean(String name, Class type) {
-		Assert.hasText(name, "");
-		Assert.notNull(type, "");
 		return applicationContext.getBean(name, type);
 	}
 

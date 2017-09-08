@@ -1,0 +1,16 @@
+package com.nt.framework;
+
+/**
+ * 
+ * @ClassName: Constant
+ * @Description: 常量类
+ * @author: zhaopo
+ * @date: 2016年11月3日 下午3:42:12
+ */
+public class Constant {
+	/**
+	 * 是在request里面传递的
+	 */
+	public static final String WEBERRORS = "WebErrors";
+
+}
