@@ -17,13 +17,13 @@ import tk.mybatis.mapper.common.MySqlMapper;
  * @param <T>
  */
 public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
-	/**
-	 * 获取表中的下一个id<br/>
-	 * 由于mycat和mapper整合的时候ID主键策略有问题<br/>
-	 * 所以先用这个来代替
-	 * 
-	 * @return
-	 */
-	Long selectNextId();
+	// /**
+	// * 获取表中的下一个id<br/>
+	// * 由于mycat和mapper整合的时候ID主键策略有问题<br/>
+	// * 所以先用这个来代替
+	// *
+	// * @return
+	// */
+	// Long selectNextId();
 
 }
