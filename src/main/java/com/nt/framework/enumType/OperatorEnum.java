@@ -10,7 +10,18 @@ package com.nt.framework.enumType;
  */
 public enum OperatorEnum {
 	// =，类似，》，《，>=,<=,!=,
-	EQ("="), LIKE("like"), GT(">"), LT("<"), NE("<>"), GE(">="), LE("<="), IN("in"), ISNULL("is null"), ISNOTNULL("is not null"), ENUM("enum"), NOTIN("not in");
+	EQ("="), 
+	NE("<>"),
+	GT(">"),
+	GE(">="),
+	LT("<"),
+	LE("<="),
+	LIKE("like"), 
+	IN("in"),
+	NOTIN("not in"),
+	ISNULL("is null"),
+	ISNOTNULL("is not null"),
+	ENUM("enum");
 
 	private OperatorEnum(String name) {
 		this.name = name;
@@ -26,4 +37,6 @@ public enum OperatorEnum {
 		this.name = name;
 	}
 
+	
+	
 }
