@@ -15,4 +15,16 @@ import tk.mybatis.mapper.common.base.BaseSelectMapper;
  */
 public interface BaseService<T extends Entity> extends BaseSelectService<T>, BaseUpdateService<T>, BaseDeleteService<T>, BaseInsertService<T> {
 
+	/**
+	 * 
+	 * @Title: isUnique
+	 * @Description: 是否唯一
+	 * @param property
+	 * @param oldValue
+	 * @param newValue
+	 * @return
+	 * @return: boolean
+	 */
+	public boolean isUnique(String property, String oldValue, String newValue);
+
 }

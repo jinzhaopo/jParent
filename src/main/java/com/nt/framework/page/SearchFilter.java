@@ -1,6 +1,7 @@
 package com.nt.framework.page;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.nt.framework.enumType.OperatorEnum;
 
@@ -204,6 +205,19 @@ public class SearchFilter implements Serializable {
 	}
 
 	/**
+	 * 
+	 * @Title: notLike
+	 * @Description: 返回不相似筛选
+	 * @param property
+	 * @param value
+	 * @return
+	 * @return: SearchFilter
+	 */
+	public static SearchFilter notLike(String property, Object value) {
+		return new SearchFilter(property, OperatorEnum.NOTLIKE, value);
+	}
+
+	/**
 	 * 返回包含筛选
 	 * 
 	 * @param property
@@ -249,6 +263,45 @@ public class SearchFilter implements Serializable {
 	 */
 	public static SearchFilter notIn(String property, Object value) {
 		return new SearchFilter(property, OperatorEnum.NOTIN, value);
+	}
+
+	/**
+	 * 
+	 * @Title: between
+	 * @Description: 返回在区间内的查询条件
+	 * @param property
+	 * @param value
+	 * @return
+	 * @return: SearchFilter
+	 */
+	public static SearchFilter between(String property, List<Object> value) {
+		return new SearchFilter(property, OperatorEnum.BT, value);
+	}
+
+	/**
+	 * 
+	 * @Title: notBetween
+	 * @Description: 返回不在区间内的查询条件
+	 * @param property
+	 * @param value
+	 * @return
+	 * @return: SearchFilter
+	 */
+	public static SearchFilter notBetween(String property, List<Object> value) {
+		return new SearchFilter(property, OperatorEnum.NOTBT, value);
+	}
+
+	/**
+	 * 
+	 * @Title: condition
+	 * @Description: 返回手写条件的查询条件
+	 * @param property
+	 * @param value
+	 * @return
+	 * @return: SearchFilter
+	 */
+	public static SearchFilter condition(String property, String value) {
+		return new SearchFilter(property, OperatorEnum.CONDITION, value);
 	}
 
 	public String getProperty() {

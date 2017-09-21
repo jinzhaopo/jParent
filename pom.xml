@@ -129,6 +129,12 @@
 			<version>${commons-net.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload.version}</version>
+		</dependency>
+
 		<!-- captcha -->
 		<dependency>
 			<groupId>com.octo.captcha</groupId>
@@ -148,6 +154,13 @@
 					<groupId>net.sf.ehcache</groupId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+
+		<!--pagehelper -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper.version}</version>
 		</dependency>
 
 	</dependencies>
