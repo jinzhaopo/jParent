@@ -10,7 +10,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 import org.apache.commons.io.FileUtils;
-import org.hsqldb.lib.FileUtil;
 
 /**
  * 

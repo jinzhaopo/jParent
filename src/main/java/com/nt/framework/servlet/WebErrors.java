@@ -3,11 +3,7 @@ package com.nt.framework.servlet;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
-
-import com.nt.framework.util.FastJsonUtils;
 import com.nt.framework.util.LocaleMessageSourceUtils;
-import com.nt.framework.util.ResponseUtils;
 
 /**
  * 

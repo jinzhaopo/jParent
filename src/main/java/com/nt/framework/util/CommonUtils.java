@@ -1,7 +1,5 @@
 package com.nt.framework.util;
 
-import java.util.List;
-
 /**
  * 
  * @ClassName: CommonUtils

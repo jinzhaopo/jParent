@@ -31,6 +31,7 @@ public class GlobalDefaultExceptionHandler {
 	 */
 	@ExceptionHandler(value = Exception.class)
 	public void defaultErrorHandler(HttpServletRequest req, Exception e, HttpServletResponse response) {
+		System.err.println(e.getStackTrace());
 		Message message = Message.error("系统错误!");
 		ResponseUtils.renderJSON(FastJsonUtils.toJSONString(message), response);
 	}

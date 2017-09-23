@@ -2,8 +2,6 @@ package com.nt.framework.service;
 
 import com.nt.framework.model.Entity;
 
-import tk.mybatis.mapper.common.base.BaseSelectMapper;
-
 /**
  * 
  * @ClassName: BaseService

@@ -1,7 +1,5 @@
 package com.nt.framework.util;
 
-import org.apache.commons.io.FileUtils;
-
 /**
  * 
  * @ClassName: FrameWorkFileUtils
@@ -11,14 +9,17 @@ import org.apache.commons.io.FileUtils;
  * @date: 2017年9月15日 下午3:33:20
  */
 public class FrameWorkFileUtils {
+	@SuppressWarnings("unused")
 	private String prefixPackage = "";
+	@SuppressWarnings("unused")
 	private String className = "";
+	@SuppressWarnings("unused")
 	private String prefixFilePath = "";
 
 	public FrameWorkFileUtils(String prefixPackage, String className, String prefixFilePath) {
 		this.prefixPackage = prefixPackage;
 		this.className = className;
-		this.prefixFilePath = prefixFilePath; 
+		this.prefixFilePath = prefixFilePath;
 	}
 
 	/**

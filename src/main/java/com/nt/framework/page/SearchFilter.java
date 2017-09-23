@@ -16,6 +16,13 @@ import com.nt.framework.enumType.OperatorEnum;
 public class SearchFilter implements Serializable {
 
 	/**
+	 * @fieldName: serialVersionUID
+	 * @fieldType: long
+	 * @Description: TODO
+	 */
+	private static final long serialVersionUID = 3267405072512331696L;
+
+	/**
 	 * 属性
 	 */
 	private String property;

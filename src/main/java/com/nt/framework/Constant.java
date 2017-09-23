@@ -3,7 +3,7 @@ package com.nt.framework;
 /**
  * 
  * @ClassName: Constant
- * @Description: 常量类
+ * @Description: 常量类,这个类中的配置是不可变的配置,为常量
  * @author: zhaopo
  * @date: 2016年11月3日 下午3:42:12
  */

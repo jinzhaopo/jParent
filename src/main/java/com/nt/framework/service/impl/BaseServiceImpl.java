@@ -45,12 +45,14 @@ public abstract class BaseServiceImpl<T extends Entity> implements BaseService<T
 
 	/**
 	 * 
-	 * @Title: setMyMapper
+	 * @Title: setMapper
 	 * @Description: 设置mapper
-	 * @param mapper
+	 * @param obj
 	 * @return: void
 	 */
-	public abstract void setMyMapper(MyMapper<T> mapper);
+	protected void setMapper(MyMapper<T> mapper) {
+		this.mapper = mapper;
+	}
 
 	/**
 	 * 
@@ -59,6 +61,7 @@ public abstract class BaseServiceImpl<T extends Entity> implements BaseService<T
 	 * @return
 	 * @return: Class
 	 */
+	@SuppressWarnings("rawtypes")
 	private Class getTClass() {
 
 		// 返回表示此 Class 所表示的实体（类、接口、基本类型或 void）的直接超类的 Type。
@@ -213,6 +216,7 @@ public abstract class BaseServiceImpl<T extends Entity> implements BaseService<T
 	 * @return
 	 * @see com.nt.framework.service.BaseSelectService#find(com.nt.framework.page.Page)
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Page find(Page page) {
 		PageHelper.startPage(page.getPageNum(), page.getPageSize());
@@ -430,13 +434,14 @@ public abstract class BaseServiceImpl<T extends Entity> implements BaseService<T
 	/**
 	 * 
 	 * @Title: getExample
-	 * @Description: TODO
+	 * @Description: 获取查询的getEacmple
 	 * @param example
 	 * @param filters
 	 * @param orders
 	 * @return
 	 * @return: Example
 	 */
+	@SuppressWarnings("rawtypes")
 	private Example getExample(Example example, List<SearchFilter> searchFilters, List<Order> orders) {
 		Class _class = getTClass();
 		if (example == null) {
@@ -485,6 +490,7 @@ public abstract class BaseServiceImpl<T extends Entity> implements BaseService<T
 	 * @param searchFilters
 	 * @return: void
 	 */
+	@SuppressWarnings({ "incomplete-switch", "unused", "rawtypes", "unchecked" })
 	private void setSearchFilters(Example example, List<SearchFilter> searchFilters) {
 		Criteria createCriteria = example.createCriteria();
 		for (SearchFilter searchFilter : searchFilters) {

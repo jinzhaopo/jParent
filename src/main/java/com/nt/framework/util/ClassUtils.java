@@ -7,13 +7,12 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-
 /**
  * 
  * @ClassName: ClassUtils
  * @Description: Class工具类
  * @author: jinzhaopo
- * @version: V1.0 
+ * @version: V1.0
  * @date: 2017年9月15日 上午10:54:10
  */
 public class ClassUtils {
@@ -26,7 +25,7 @@ public class ClassUtils {
 	 * @author LiYaoHua
 	 * @date 2012-4-5 上午11:22:24
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static List<Class> getAllClassByInterface(Class c) {
 		List returnClassList = new ArrayList<Class>();
 		// 判断是不是接口,不是接口不作处理
@@ -59,6 +58,7 @@ public class ClassUtils {
 	 * @author LiYaoHua
 	 * @date 2012-4-5 上午11:26:48
 	 */
+	@SuppressWarnings("rawtypes")
 	private static List<Class> getClasses(String packageName) throws ClassNotFoundException, IOException {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		String path = packageName.replace(".", "/");
@@ -75,6 +75,7 @@ public class ClassUtils {
 		return classes;
 	}
 
+	@SuppressWarnings("rawtypes")
 	private static List<Class> findClass(File directory, String packageName) throws ClassNotFoundException {
 		List<Class> classes = new ArrayList<Class>();
 		if (!directory.exists()) {
@@ -91,5 +92,5 @@ public class ClassUtils {
 		}
 		return classes;
 	}
-	
+
 }

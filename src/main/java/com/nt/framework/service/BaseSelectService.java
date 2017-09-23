@@ -117,6 +117,7 @@ public interface BaseSelectService<T extends Entity> {
 	 * @return
 	 * @return: Page
 	 */
+	@SuppressWarnings("rawtypes")
 	Page find(Page page);
 
 }

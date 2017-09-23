@@ -1,7 +1,5 @@
 package com.nt.framework.model;
 
-import javax.persistence.OrderBy;
-
 import org.apache.commons.lang3.builder.CompareToBuilder;
 
 /**

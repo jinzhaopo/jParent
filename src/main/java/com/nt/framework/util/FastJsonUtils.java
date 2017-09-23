@@ -8,7 +8,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.JSONLibDataFormatSerializer;
 import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.sun.org.apache.xml.internal.security.keys.content.KeyValue;
 
 public class FastJsonUtils {
 
@@ -130,12 +129,12 @@ public class FastJsonUtils {
 	 * @param keyvalue
 	 * @return
 	 */
-	public static Object beanToJson(KeyValue keyvalue) {
+	public static Object beanToJson(Object keyvalue) {
 		String textJson = JSON.toJSONString(keyvalue);
 		Object objectJson = JSON.parse(textJson);
 		return objectJson;
 	}
-
+	
 	/**
 	 * 将string转化为序列化的json字符串
 	 * 
@@ -155,6 +154,7 @@ public class FastJsonUtils {
 	 * @return
 	 * @return: Map
 	 */
+	@SuppressWarnings("rawtypes")
 	public static Map stringToCollect(String s) {
 		Map m = JSONObject.parseObject(s);
 		return m;
@@ -168,6 +168,7 @@ public class FastJsonUtils {
 	 * @return
 	 * @return: String
 	 */
+	@SuppressWarnings("rawtypes")
 	public static String collectToString(Map m) {
 		String s = JSONObject.toJSONString(m);
 		return s;
