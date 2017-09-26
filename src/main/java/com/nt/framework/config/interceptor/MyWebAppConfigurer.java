@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.nt.framework.interceptor.LogInterceptor;
 import com.nt.framework.interceptor.ValidationInterceptor;
 
 /**
@@ -23,6 +24,7 @@ public class MyWebAppConfigurer extends WebMvcConfigurerAdapter {
 		// addPathPatterns 用于添加拦截规则
 		// excludePathPatterns 用户排除拦截
 		registry.addInterceptor(new ValidationInterceptor()).addPathPatterns("/**");
+		registry.addInterceptor(new LogInterceptor()).addPathPatterns("/**");
 		super.addInterceptors(registry);
 	}
 

@@ -1,4 +1,4 @@
-package com.nt.framework.mapper;
+package com.nt.framework.tkMapper;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;

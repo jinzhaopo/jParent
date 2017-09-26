@@ -1,6 +1,7 @@
 package com.nt.framework;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 
@@ -12,6 +13,39 @@ import java.io.Serializable;
  */
 public class Setting implements Serializable {
 
+	private static Setting setting = null;
+
 	private static final long serialVersionUID = 2266604316208785746L;
+
+	private Setting() {
+		super();
+	}
+
+	/**
+	 * 
+	 * @Title: getSetting
+	 * @Description: 获取setting
+	 * @return
+	 * @return: Setting
+	 */
+	public static Setting getSetting() {
+		if (setting == null) {
+			setting = new Setting();
+		}
+		return setting;
+	}
+
+	/**
+	 * 日志需要记录的url
+	 */
+	private List<LogConfig> logConfigs;
+
+	public List<LogConfig> getLogConfigs() {
+		return logConfigs;
+	}
+
+	public void setLogConfigs(List<LogConfig> logConfigs) {
+		this.logConfigs = logConfigs;
+	}
 
 }

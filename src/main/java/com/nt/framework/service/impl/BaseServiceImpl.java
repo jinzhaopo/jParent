@@ -14,7 +14,6 @@ import org.springframework.util.Assert;
 
 import com.github.pagehelper.PageHelper;
 import com.nt.framework.enumType.OperatorEnum;
-import com.nt.framework.mapper.MyMapper;
 import com.nt.framework.model.BaseEntity;
 import com.nt.framework.model.Entity;
 import com.nt.framework.model.PriorityEntity;
@@ -22,6 +21,7 @@ import com.nt.framework.page.Order;
 import com.nt.framework.page.Page;
 import com.nt.framework.page.SearchFilter;
 import com.nt.framework.service.BaseService;
+import com.nt.framework.tkMapper.MyMapper;
 
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.entity.Example.Criteria;
