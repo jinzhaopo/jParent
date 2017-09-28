@@ -6,8 +6,8 @@ import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 
-import com.nt.framework.Constant;
 import com.nt.framework.DateEditor;
+import com.nt.framework.constants.MessageConst;
 import com.nt.framework.servlet.Message;
 
 /**
@@ -197,7 +197,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message successMessage4Save() {
-		return successMessage(Constant.MESSAGE_SUCCESS_SAVE);
+		return successMessage(MessageConst.MESSAGE_SUCCESS_SAVE);
 	}
 
 	/**
@@ -209,7 +209,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message successMessage4Save(Object data) {
-		return successMessage(Constant.MESSAGE_SUCCESS_SAVE, null, data);
+		return successMessage(MessageConst.MESSAGE_SUCCESS_SAVE, null, data);
 	}
 
 	/**
@@ -220,7 +220,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message successMessage4Delete() {
-		return successMessage(Constant.MESSAGE_SUCCESS_DELETE);
+		return successMessage(MessageConst.MESSAGE_SUCCESS_DELETE);
 	}
 
 	/**
@@ -231,7 +231,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message successMessage4Delete(Object data) {
-		return successMessage(Constant.MESSAGE_SUCCESS_DELETE, null, data);
+		return successMessage(MessageConst.MESSAGE_SUCCESS_DELETE, null, data);
 	}
 
 	/**
@@ -242,7 +242,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message successMessage4Update() {
-		return successMessage(Constant.MESSAGE_SUCCESS_UPDATE);
+		return successMessage(MessageConst.MESSAGE_SUCCESS_UPDATE);
 	}
 
 	/**
@@ -253,7 +253,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message successMessage4Update(Object data) {
-		return successMessage(Constant.MESSAGE_SUCCESS_UPDATE, null, data);
+		return successMessage(MessageConst.MESSAGE_SUCCESS_UPDATE, null, data);
 	}
 
 	/**
@@ -264,7 +264,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message warnMessage4Save() {
-		return warnMessage(Constant.MESSAGE_WARN_SAVE);
+		return warnMessage(MessageConst.MESSAGE_WARN_SAVE);
 	}
 
 	/**
@@ -275,7 +275,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message warnMessage4Save(Object data) {
-		return warnMessage(Constant.MESSAGE_WARN_SAVE, null, data);
+		return warnMessage(MessageConst.MESSAGE_WARN_SAVE, null, data);
 	}
 
 	/**
@@ -286,7 +286,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message warnMessage4Delete() {
-		return warnMessage(Constant.MESSAGE_WARN_DELETE);
+		return warnMessage(MessageConst.MESSAGE_WARN_DELETE);
 	}
 
 	/**
@@ -298,7 +298,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message warnMessage4Delete(Object data) {
-		return warnMessage(Constant.MESSAGE_WARN_DELETE, null, data);
+		return warnMessage(MessageConst.MESSAGE_WARN_DELETE, null, data);
 	}
 
 	/**
@@ -309,7 +309,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message warnMessage4Update() {
-		return warnMessage(Constant.MESSAGE_WARN_UPDATE);
+		return warnMessage(MessageConst.MESSAGE_WARN_UPDATE);
 	}
 
 	/**
@@ -321,7 +321,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message warnMessage4Update(Object data) {
-		return warnMessage(Constant.MESSAGE_WARN_UPDATE, null, data);
+		return warnMessage(MessageConst.MESSAGE_WARN_UPDATE, null, data);
 	}
 
 	/**
@@ -332,7 +332,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message errorMessage4Save() {
-		return errorMessage(Constant.MESSAGE_ERROR_SAVE);
+		return errorMessage(MessageConst.MESSAGE_ERROR_SAVE);
 	}
 
 	/**
@@ -344,7 +344,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message errorMessage4Save(Object data) {
-		return errorMessage(Constant.MESSAGE_ERROR_SAVE, null, data);
+		return errorMessage(MessageConst.MESSAGE_ERROR_SAVE, null, data);
 	}
 
 	/**
@@ -355,7 +355,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message errorMessage4Delete() {
-		return errorMessage(Constant.MESSAGE_ERROR_DELETE);
+		return errorMessage(MessageConst.MESSAGE_ERROR_DELETE);
 	}
 
 	/**
@@ -366,7 +366,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message errorMessage4Delete(Object data) {
-		return errorMessage(Constant.MESSAGE_ERROR_DELETE, null, data);
+		return errorMessage(MessageConst.MESSAGE_ERROR_DELETE, null, data);
 	}
 
 	/**
@@ -377,7 +377,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message errorMessage4Update() {
-		return errorMessage(Constant.Message_ERROR_UPDATE);
+		return errorMessage(MessageConst.Message_ERROR_UPDATE);
 	}
 
 	/**
@@ -389,6 +389,6 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message errorMessage4Update(Object data) {
-		return errorMessage(Constant.Message_ERROR_UPDATE, null, data);
+		return errorMessage(MessageConst.Message_ERROR_UPDATE, null, data);
 	}
 }

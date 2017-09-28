@@ -8,16 +8,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.nt.framework.LogConfig;
-import com.nt.framework.Setting;
 import com.nt.framework.model.BaseLog;
 import com.nt.framework.service.BaseLogService;
+import com.nt.framework.util.SettingUtils;
 import com.nt.framework.util.SpringUtils;
 
 /**
@@ -48,7 +46,7 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-		List<LogConfig> logConfigs = Setting.getSetting().getLogConfigs();
+		List<LogConfig> logConfigs = SettingUtils.getSetting().getLogConfigs();
 		if (logConfigs != null) {
 			String path = request.getServletPath();
 			for (LogConfig logConfig : logConfigs) {

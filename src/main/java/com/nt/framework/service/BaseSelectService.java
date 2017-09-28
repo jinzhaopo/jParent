@@ -120,4 +120,24 @@ public interface BaseSelectService<T extends Entity> {
 	@SuppressWarnings("rawtypes")
 	Page find(Page page);
 
+	/**
+	 * 
+	 * @Title: getCount
+	 * @Description: 根据实体中的属性查询总数，查询条件使用等号
+	 * @param t
+	 * @return
+	 * @return: int
+	 */
+	int getCount(T t);
+
+	/**
+	 * 
+	 * @Title: getCount
+	 * @Description: 通过条件查询总数
+	 * @param filters
+	 * @return
+	 * @return: int
+	 */
+	int getCount(SearchFilter... filters);
+
 }

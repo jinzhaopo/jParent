@@ -7,6 +7,8 @@ import java.util.Date;
 
 import org.apache.commons.lang3.time.DateUtils;
 
+import com.nt.framework.constants.Constant;
+
 /**
  * 日期类型转换
  * 

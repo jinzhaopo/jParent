@@ -1,23 +1,14 @@
-package com.nt.framework;
+package com.nt.framework.constants;
 
 /**
  * 
- * @ClassName: Constant
- * @Description: 常量类,这个类中的配置是不可变的配置,为常量
- * @author: zhaopo
- * @date: 2016年11月3日 下午3:42:12
+ * @ClassName: MessageConst
+ * @Description: 消息常量
+ * @author: jinzhaopo
+ * @version: V1.0
+ * @date: 2017年9月26日 下午3:28:50
  */
-public final class Constant {
-	/**
-	 * 
-	 * @Title:Constant
-	 * @Description:不能被实例化
-	 */
-	private Constant() {
-	}
-
-	/** 日期格式配比 */
-	public static final String[] DATE_PATTERNS = new String[] { "yyyy", "yyyy-MM", "yyyyMM", "yyyy/MM", "yyyy-MM-dd", "yyyyMMdd", "yyyy/MM/dd", "yyyy-MM-dd HH:mm:ss", "yyyyMMddHHmmss", "yyyy/MM/dd HH:mm:ss" };
+public final class MessageConst {
 
 	/**
 	 * 添加成功的提示
@@ -56,9 +47,4 @@ public final class Constant {
 	 * 更新错误
 	 */
 	public static final String Message_ERROR_UPDATE = "message_error_update";
-	/**
-	 * 是在request里面传递的
-	 */
-	public static final String WEBERRORS = "WebErrors";
-
 }

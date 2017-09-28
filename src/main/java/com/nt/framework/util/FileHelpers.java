@@ -23,6 +23,14 @@ public class FileHelpers {
 	private FileHelpers() {
 	}
 
+	/**
+	 * 
+	 * @Title: createFile
+	 * @Description: 创建文件
+	 * @param in
+	 * @param filePath
+	 * @return: void
+	 */
 	public static void createFile(InputStream in, String filePath) {
 		if (in == null)
 			throw new RuntimeException("create file error: inputstream is null");

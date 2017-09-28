@@ -227,6 +227,30 @@ public abstract class BaseServiceImpl<T extends Entity> implements BaseService<T
 
 	/**
 	 * 
+	 * @Title: getCount
+	 * @Description: 根据实体中的属性查询总数，查询条件使用等号
+	 * @param t
+	 * @return
+	 * @see com.nt.framework.service.BaseSelectService#getCount(com.nt.framework.model.Entity)
+	 */
+	public int getCount(T t) {
+		return mapper.selectCount(t);
+	}
+
+	/**
+	 * 
+	 * @Title: getCount
+	 * @Description: 通过条件查询总数
+	 * @param filters
+	 * @return
+	 * @see com.nt.framework.service.BaseSelectService#getCount(com.nt.framework.page.SearchFilter[])
+	 */
+	public int getCount(SearchFilter... filters) {
+		return mapper.selectCountByExample(getExample(null, getSearchFilters(filters), null));
+	}
+
+	/**
+	 * 
 	 * @Title: updateByPrimaryKey
 	 * @Description: 根据主键更新实体全部字段，null值会被更新
 	 * @param t

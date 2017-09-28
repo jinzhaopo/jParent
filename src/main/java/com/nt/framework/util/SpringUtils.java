@@ -63,9 +63,17 @@ public class SpringUtils implements DisposableBean, ApplicationContextAware {
 	 * @return
 	 * @return: Object
 	 */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static Object getBean(String name, Class type) {
+	public static <T> T getBean(String name, Class<T> type) {
 		return applicationContext.getBean(name, type);
+	}
+
+	/**
+	 * 获取applicationContext
+	 * 
+	 * @return applicationContext
+	 */
+	public static ApplicationContext getApplicationContext() {
+		return applicationContext;
 	}
 
 	private SpringUtils() {

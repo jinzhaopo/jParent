@@ -28,6 +28,9 @@
 		<dubbo.version>2.5.3</dubbo.version>
 
 		<captcha.version>1.0-RC6</captcha.version>
+
+		<xdocreport.version>1.0.5</xdocreport.version>
+		<poi.version>3.12</poi.version>
 	</properties>
 
 	<!-- Inherit defaults from Spring Boot -->
@@ -157,6 +160,12 @@
 			</exclusions>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${commons-beanutils.version}</version>
+		</dependency>
+
 		<!-- captcha -->
 		<dependency>
 			<groupId>com.octo.captcha</groupId>
@@ -207,6 +216,33 @@
 					<artifactId>spring</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+
+		<!-- freemarker -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+		<!-- word -->
+		<dependency>
+			<groupId>fr.opensagres.xdocreport</groupId>
+			<artifactId>fr.opensagres.xdocreport.document</artifactId>
+			<version>${xdocreport.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>fr.opensagres.xdocreport</groupId>
+			<artifactId>org.apache.poi.xwpf.converter.xhtml</artifactId>
+			<version>${xdocreport.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>${poi.version}</version>
 		</dependency>
 	</dependencies>
 
