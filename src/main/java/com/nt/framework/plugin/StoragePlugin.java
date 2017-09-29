@@ -6,11 +6,15 @@ import java.util.List;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import com.nt.framework.FileInfo;
 import com.nt.framework.model.PluginConfig;
 import com.nt.framework.model.PluginConfigAttribute;
+import com.nt.framework.plugin.file.FilePlugin;
 import com.nt.framework.service.PluginConfigAttributeService;
 import com.nt.framework.service.PluginConfigService;
 import com.nt.framework.util.SpringUtils;
@@ -29,12 +33,14 @@ public abstract class StoragePlugin implements Comparable<StoragePlugin> {
 	 */
 	public static String[] KEYS = { "filePlugin" };
 
+	@Autowired
 	private PluginConfigService pluginConfigService;
+
+	@Autowired
 	private PluginConfigAttributeService pluginConfigAttributeService;
 
 	public StoragePlugin() {
 		super();
-		pluginConfigService = (PluginConfigService) SpringUtils.getBean("pluginConfigServiceImpl");
 	}
 
 	/**

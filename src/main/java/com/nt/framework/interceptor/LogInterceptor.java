@@ -41,7 +41,7 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
 
 	public LogInterceptor() {
 		super();
-		this.baseLogService = (BaseLogService) SpringUtils.getBean("baseLogService");
+		this.baseLogService = (BaseLogService) SpringUtils.getBean("baseLogServiceImpl");
 	}
 
 	@Override

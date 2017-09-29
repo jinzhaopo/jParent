@@ -5,6 +5,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -17,6 +18,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * @version: V1.0
  * @date: 2017年9月27日 下午3:26:47
  */
+@Component
 public class ApplicationContextHelpers implements ServletContextAware {
 
 	private static ServletContext servletContext;
