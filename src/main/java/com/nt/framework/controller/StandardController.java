@@ -377,7 +377,7 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message errorMessage4Update() {
-		return errorMessage(MessageConst.Message_ERROR_UPDATE);
+		return errorMessage(MessageConst.MESSAGE_ERROR_UPDATE);
 	}
 
 	/**
@@ -389,6 +389,6 @@ public abstract class StandardController {
 	 * @return: Message
 	 */
 	public Message errorMessage4Update(Object data) {
-		return errorMessage(MessageConst.Message_ERROR_UPDATE, null, data);
+		return errorMessage(MessageConst.MESSAGE_ERROR_UPDATE, null, data);
 	}
 }

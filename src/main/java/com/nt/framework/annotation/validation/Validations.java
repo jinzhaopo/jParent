@@ -42,4 +42,13 @@ public @interface Validations {
 	 */
 	public RegexFieldValidator[] regexFields() default {};
 
+	/**
+	 * 
+	 * @Title: intRangeFields
+	 * @Description: int验证
+	 * @return
+	 * @return: IntRangeFieldValidator
+	 */
+	public IntRangeFieldValidator[] intRangeFields() default {};
+
 }

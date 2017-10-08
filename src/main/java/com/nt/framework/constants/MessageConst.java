@@ -42,9 +42,14 @@ public final class MessageConst {
 	/**
 	 * 删除失败的提示
 	 */
-	public static final String MESSAGE_ERROR_DELETE = "message_error_delete";
+	public static final String MESSAGE_ERROR_DELETE = "message.error.delete";
 	/**
 	 * 更新错误
 	 */
-	public static final String Message_ERROR_UPDATE = "message_error_update";
+	public static final String MESSAGE_ERROR_UPDATE = "message.error.update";
+	/**
+	 * 参数错误
+	 */
+	public static final String MESSAGE_ERROR_ARGS = "message.error.args";
+
 }
