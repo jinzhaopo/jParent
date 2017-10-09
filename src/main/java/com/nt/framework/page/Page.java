@@ -37,12 +37,14 @@ public class Page<T> extends PageInfo<T> {
 		this.setTotal(0);// 设置总记录数
 		this.setPages(0);// 设置总页数
 
+		searchFilters = new ArrayList<SearchFilter>();
+		orders = new ArrayList<Order>();
+
 		// 默认排序createDate
 		Order order = new Order();
 		order.setProperty(DEFAULT_PROPERTY);
 		orders.add(order);
 
-		searchFilters = new ArrayList<SearchFilter>();
 	}
 
 	/**

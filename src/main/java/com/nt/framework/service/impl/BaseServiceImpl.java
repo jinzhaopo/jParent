@@ -469,7 +469,7 @@ public abstract class BaseServiceImpl<T extends Entity> implements BaseService<T
 	private Example getExample(Example example, List<SearchFilter> searchFilters, List<Order> orders) {
 		Class _class = getTClass();
 		if (example == null) {
-			new Example(_class);
+			example = new Example(_class);
 		}
 		if (orders == null) {
 			orders = new ArrayList<Order>();

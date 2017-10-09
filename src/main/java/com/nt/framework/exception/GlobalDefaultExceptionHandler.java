@@ -31,8 +31,16 @@ public class GlobalDefaultExceptionHandler {
 	 */
 	@ExceptionHandler(value = Exception.class)
 	public void defaultErrorHandler(HttpServletRequest req, Exception e, HttpServletResponse response) {
-		System.err.println(e.getStackTrace());
+		System.err.println(e);
 		Message message = Message.error("系统错误!");
+		StackTraceElement[] stacks = e.getStackTrace();
+		for (int i = 0; i < stacks.length; i++) {
+			System.err.println("file name:" + stacks[i].getFileName());
+			System.err.println("class:" + stacks[i].getClassName());
+			System.err.println("method name:" + stacks[i].getMethodName());
+			System.err.println("Line No:" + stacks[i].getLineNumber());
+			System.err.println("--------------------");
+		}
 		ResponseUtils.renderJSON(FastJsonUtils.toJSONString(message), response);
 	}
 }

@@ -2,13 +2,16 @@ package com.nt.framework.controller;
 
 import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 
+import com.alibaba.druid.support.json.JSONUtils;
 import com.nt.framework.DateEditor;
 import com.nt.framework.constants.MessageConst;
 import com.nt.framework.servlet.Message;
+import com.nt.framework.util.ApplicationContextHelpers;
 
 /**
  * 
@@ -390,5 +393,34 @@ public abstract class StandardController {
 	 */
 	public Message errorMessage4Update(Object data) {
 		return errorMessage(MessageConst.MESSAGE_ERROR_UPDATE, null, data);
+	}
+
+	/**
+	 * 
+	 * @Title: dealJsonP
+	 * @Description: 处理ajax跨域请求的封装数据
+	 * @param json
+	 * @return
+	 * @return: String
+	 */
+	public String dealJSONP(String json) {
+		String callback = ApplicationContextHelpers.getRequest().getParameter("callback");
+		if (StringUtils.isNotBlank(callback)) {
+			return callback + "(" + json + ")";
+		} else {
+			return json;
+		}
+	}
+
+	/**
+	 * 
+	 * @Title: dealJSONP
+	 * @Description: 处理ajax跨域请求的封装数据
+	 * @param message
+	 * @return
+	 * @return: String
+	 */
+	public String dealJSONP(Message message) {
+		return dealJSONP(JSONUtils.toJSONString(message));
 	}
 }
