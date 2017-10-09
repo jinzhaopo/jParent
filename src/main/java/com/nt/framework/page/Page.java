@@ -47,6 +47,10 @@ public class Page<T> extends PageInfo<T> {
 
 	}
 
+	public Page(List<T> list) {
+		super(list);
+	}
+
 	/**
 	 * 
 	 * @Title: addOrders

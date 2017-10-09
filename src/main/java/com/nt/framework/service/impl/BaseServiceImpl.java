@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.nt.framework.enumType.OperatorEnum;
 import com.nt.framework.model.BaseEntity;
 import com.nt.framework.model.Entity;
@@ -221,8 +222,8 @@ public abstract class BaseServiceImpl<T extends Entity> implements BaseService<T
 	public Page find(Page page) {
 		PageHelper.startPage(page.getPageNum(), page.getPageSize());
 		List list = getList(page.getSearchFilters(), page.getOrders());
-		page.setList(list);
-		return page;
+		// page.setList(list);
+		return new Page(list);
 	}
 
 	/**
