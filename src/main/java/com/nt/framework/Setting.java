@@ -134,6 +134,32 @@ public class Setting implements Serializable {
 	 */
 	private String locale = "zh_CN";
 
+	// cache
+	/**
+	 * ehcache xml的配置存放的路径
+	 */
+	private String ehcacheXmlPath = "conf/ehcache.xml";
+	/**
+	 * 是否开启缓存
+	 */
+	private Boolean ehcacheShared = true;
+
+	public Boolean getEhcacheShared() {
+		return ehcacheShared;
+	}
+
+	public void setEhcacheShared(Boolean ehcacheShared) {
+		this.ehcacheShared = ehcacheShared;
+	}
+
+	public String getEhcacheXmlPath() {
+		return ehcacheXmlPath;
+	}
+
+	public void setEhcacheXmlPath(String ehcacheXmlPath) {
+		this.ehcacheXmlPath = ehcacheXmlPath;
+	}
+
 	public String getDateTimeFormat() {
 		return dateTimeFormat;
 	}
