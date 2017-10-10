@@ -31,4 +31,24 @@ public interface MyCaptchaService {
 	 * @return: boolean
 	 */
 	public abstract boolean isValid(String captchaId, String captcha);
+
+	/**
+	 * 
+	 * @Title: createVerifyCodeKey
+	 * @Description: 创建验证码
+	 * @param verifyCodeKey
+	 * @return
+	 * @return: String
+	 */
+	String createVerifyCodeKey(String verifyCodeKey);
+
+	/**
+	 * 
+	 * @Title: isTimeOutOfVerifyCodeKey
+	 * @Description: 校验是否超时
+	 * @param oldCode
+	 * @return
+	 * @return: Boolean
+	 */
+	Boolean isTimeOutOfVerifyCodeKey(String oldCode);
 }

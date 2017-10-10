@@ -1,8 +1,12 @@
 package com.nt.framework.config.mvc;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -30,6 +34,10 @@ public class HttpMessageConvertersConfig {
 	@Bean
 	public HttpMessageConverters fastJsonHttpMessageConverters() {
 		FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
+		List<MediaType> supportedMediaTypes = new ArrayList<MediaType>();
+		supportedMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
+		fastConverter.setSupportedMediaTypes(supportedMediaTypes);
+		
 		FastJsonConfig fastJsonConfig = new FastJsonConfig();
 		fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
 		fastConverter.setFastJsonConfig(fastJsonConfig);

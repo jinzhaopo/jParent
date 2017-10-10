@@ -35,5 +35,14 @@ public final class Constant {
 	 * 是在request里面传递的
 	 */
 	public static final String WEBERRORS = "WebErrors";
+	/**
+	 * 验证码分隔符
+	 */
+	public static final String VERIFY_CODE_KEY_SEPARATOR = "_";
+
+	/**
+	 * 动态密码过期时间间隔
+	 */
+	public static final int DYNAMIC_PASSWORD_PERIOD = 10;
 
 }

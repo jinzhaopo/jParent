@@ -1,12 +1,15 @@
 package com.nt.framework.service.impl;
 
 import java.awt.image.BufferedImage;
+import java.util.Date;
 
 import javax.annotation.Resource;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.stereotype.Service;
 
+import com.nt.framework.constants.Constant;
 import com.nt.framework.service.MyCaptchaService;
 import com.octo.captcha.service.CaptchaService;
 
@@ -54,5 +57,47 @@ public class CaptchaServiceImpl implements MyCaptchaService {
 		} catch (Exception e) {
 			return false;
 		}
+	}
+
+	/**
+	 * 
+	 * @Title: createVerifyCodeKey
+	 * @Description: 创建验证码
+	 * @param verifyCodeKey
+	 * @return
+	 * @see com.nt.framework.service.MyCaptchaService#createVerifyCodeKey(java.lang.String)
+	 */
+	@Override
+	public String createVerifyCodeKey(String verifyCodeKey) {
+		StringBuffer verifyCodeKeySB = new StringBuffer();
+		verifyCodeKeySB.append(System.currentTimeMillis());
+		verifyCodeKeySB.append(Constant.VERIFY_CODE_KEY_SEPARATOR);
+		verifyCodeKeySB.append(verifyCodeKey);
+
+		return verifyCodeKeySB.toString();
+	}
+
+	/**
+	 * 
+	 * @Title: isTimeOutOfVerifyCodeKey
+	 * @Description: 校验验证码是否超时<br>
+	 *               StringUtils.substringAfter(oldCode,
+	 *               Constant.VERIFY_CODE_KEY_SEPARATOR).equals(code) 判断验证码是否错误
+	 * @param oldCode
+	 * @return
+	 * @see com.nt.framework.service.MyCaptchaService#isTimeOutOfVerifyCodeKey(java.lang.String)
+	 */
+	@Override
+	public Boolean isTimeOutOfVerifyCodeKey(String oldCode) {
+		if (StringUtils.isNotBlank(oldCode)) {
+			long time = Long.valueOf(StringUtils.substringBefore(oldCode, Constant.VERIFY_CODE_KEY_SEPARATOR));
+			Date verifyCodeBuildDate = new Date(time);
+			Date verifyCodeExpiredDate = DateUtils.addMinutes(verifyCodeBuildDate, Constant.DYNAMIC_PASSWORD_PERIOD);
+			Date now = new Date();
+			if (now.after(verifyCodeExpiredDate)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
