@@ -90,7 +90,7 @@ public class Setting implements Serializable {
 	/**
 	 * 指定模版的位置
 	 */
-	private String templateLoaderPaths = "/WEB-INF/template,classpath:/";
+	private String[] templateLoaderPaths = new String[] { "/WEB-INF/templates", "classpath:/", "classpath:templates" };
 
 	/**
 	 * 数字显示的格式
@@ -143,6 +143,46 @@ public class Setting implements Serializable {
 	 * 是否开启缓存
 	 */
 	private Boolean ehcacheShared = true;
+
+	// freemarker
+	/**
+	 * freemarker模版的位置
+	 */
+	private String freemarkerTemplatePath = "";
+
+	// 短信
+	/**
+	 * 短信工具类的包名
+	 */
+	private String smsClassName = "";
+	/**
+	 * 短信的方法名称
+	 */
+	private String smsMethodName = "sendSms";
+
+	public String getSmsClassName() {
+		return smsClassName;
+	}
+
+	public void setSmsClassName(String smsClassName) {
+		this.smsClassName = smsClassName;
+	}
+
+	public String getSmsMethodName() {
+		return smsMethodName;
+	}
+
+	public void setSmsMethodName(String smsMethodName) {
+		this.smsMethodName = smsMethodName;
+	}
+
+	public String getFreemarkerTemplatePath() {
+		return freemarkerTemplatePath;
+	}
+
+	public void setFreemarkerTemplatePath(String freemarkerTemplatePath) {
+		this.freemarkerTemplatePath = freemarkerTemplatePath;
+	}
 
 	public Boolean getEhcacheShared() {
 		return ehcacheShared;
@@ -252,11 +292,11 @@ public class Setting implements Serializable {
 		return uploadMaxSize;
 	}
 
-	public String getTemplateLoaderPaths() {
+	public String[] getTemplateLoaderPaths() {
 		return templateLoaderPaths;
 	}
 
-	public void setTemplateLoaderPaths(String templateLoaderPaths) {
+	public void setTemplateLoaderPaths(String[] templateLoaderPaths) {
 		this.templateLoaderPaths = templateLoaderPaths;
 	}
 
