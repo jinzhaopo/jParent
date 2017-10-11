@@ -74,7 +74,7 @@ public class SmsMessageServiceImpl extends BaseServiceImpl<SmsMessage> implement
 			Class clz = Class.forName(SettingUtils.getSetting().getSmsClassName());
 			Object obj = clz.newInstance();
 			// 获取方法
-			Method m = obj.getClass().getDeclaredMethod(SettingUtils.getSetting().getSmsMethodName(), String.class);
+			Method m = obj.getClass().getDeclaredMethod(SettingUtils.getSetting().getSmsMethodName(), String.class, String.class);
 			MSG = (String) m.invoke(obj, phoneNum, content);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

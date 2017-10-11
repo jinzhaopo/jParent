@@ -51,5 +51,18 @@ public final class MessageConst {
 	 * 参数错误
 	 */
 	public static final String MESSAGE_ERROR_ARGS = "message.error.args";
+	/**
+	 * 操作成功
+	 */
+	public static final String MESSAGE_SUCCESS_OPERATION = "message.success.operation";
+
+	/**
+	 * 操作警告
+	 */
+	public static final String MESSAGE_WARN_OPERATION = "message.warn.operation";
+	/**
+	 * 操作错误
+	 */
+	public static final String MESSAGE_ERROR_OPERATION = "message.error.operation";
 
 }

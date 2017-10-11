@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * @version: V1.0
  * @date: 2017年10月10日 下午7:39:17
  */
-@Table(name = "nt_smsMessageUse")
+@Table(name = "nt_sms_message_use")
 public class SmsMessageUse extends SmsMessage {
 
 	private static final long serialVersionUID = -5855018947607543273L;

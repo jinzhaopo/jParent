@@ -8,7 +8,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.nt.framework.constants.Constant;
 import com.nt.framework.util.DateHelpers;
-import com.nt.framework.util.SettingUtils;
 
 /**
  * 
