@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Table;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.nt.framework.model.enumModel.MessageStatus;
 import com.nt.framework.model.enumModel.MessageType;
 
@@ -33,10 +35,10 @@ public class SmsMessage extends BaseEntity {
 	 * 发送时间
 	 */
 	@Column(name = "send_time")
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date sendTime;
 	/**
-	 * 流水号---不同业务类型的流水帐号是不同的<br>
-	 * 可以根据流水帐号去查询业务短信
+	 * 流水号
 	 */
 	private String sn;
 	/**

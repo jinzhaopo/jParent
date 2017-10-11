@@ -36,7 +36,6 @@ public class HttpMessageConvertersConfig {
 		FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
 		List<MediaType> supportedMediaTypes = new ArrayList<MediaType>();
 		supportedMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
-		supportedMediaTypes.add(MediaType.valueOf(MediaType.TEXT_XML_VALUE + ";charset=UTF-8"));
 		fastConverter.setSupportedMediaTypes(supportedMediaTypes);
 
 		FastJsonConfig fastJsonConfig = new FastJsonConfig();

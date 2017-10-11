@@ -221,4 +221,21 @@ public final class FreemarkerUtils {
 		}
 	}
 
+	/**
+	 * 
+	 * @Title: getContent
+	 * @Description: 根据模版获取模版中的所有内容
+	 * @param templateName
+	 * @param data
+	 * @return: void
+	 */
+	public static String getContentByTemplate(String templateName, Map<String, ?> data) {
+		FreeMarkerPaser.set(new FreeMarkerPaser());
+		FreeMarkerPaser freeMarkerPaser = FreeMarkerPaser.getInstance();
+		freeMarkerPaser.setPageFolder(SettingUtils.getSetting().getFreemarkerTemplatePath());
+		freeMarkerPaser.setPageName(templateName);
+		freeMarkerPaser.putData(data);
+		return freeMarkerPaser.proessPageContent();
+	}
+
 }
