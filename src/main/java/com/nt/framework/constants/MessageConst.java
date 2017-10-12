@@ -64,5 +64,13 @@ public final class MessageConst {
 	 * 操作错误
 	 */
 	public static final String MESSAGE_ERROR_OPERATION = "message.error.operation";
+	/**
+	 * 验证码错误
+	 */
+	public static final String MESSAGE_ERROR_VERIFY_CODE = "message.error.verify.code";
+	/**
+	 * 验证码超时
+	 */
+	public static final String MESSAGE_RRROT_VERIFY_CODE_TIME_OUT = "message.error.verify.code.time.out";
 
 }
