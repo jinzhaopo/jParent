@@ -1,7 +1,13 @@
 package com.nt.framework.controller;
 
+import java.security.interfaces.RSAPublicKey;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.web.bind.WebDataBinder;
@@ -10,8 +16,10 @@ import org.springframework.web.bind.annotation.InitBinder;
 import com.alibaba.druid.support.json.JSONUtils;
 import com.nt.framework.DateEditor;
 import com.nt.framework.constants.MessageConst;
+import com.nt.framework.service.RSAService;
 import com.nt.framework.servlet.Message;
 import com.nt.framework.util.ApplicationContextHelpers;
+import com.nt.framework.util.SpringUtils;
 
 /**
  * 
@@ -397,6 +405,52 @@ public abstract class StandardController {
 
 	/**
 	 * 
+	 * @Title: successMessage4Option
+	 * @Description: 操作成功的提示
+	 * @return
+	 * @return: Message
+	 */
+	public Message successMessage4Option() {
+		return successMessage(MessageConst.MESSAGE_SUCCESS_OPERATION);
+	}
+
+	/**
+	 * 
+	 * @Title: successMessage4Option
+	 * @Description: 操作成功的提示
+	 * @param obj
+	 * @return
+	 * @return: Message
+	 */
+	public Message successMessage4Option(Object obj) {
+		return successMessage(MessageConst.MESSAGE_SUCCESS_OPERATION, null, obj);
+	}
+
+	/**
+	 * 
+	 * @Title: errorMessage4Option
+	 * @Description: 操作失败的提示
+	 * @return
+	 * @return: Message
+	 */
+	public Message errorMessage4Option() {
+		return errorMessage(MessageConst.MESSAGE_ERROR_OPERATION);
+	}
+
+	/**
+	 * 
+	 * @Title: errorMessage4Option
+	 * @Description: 操作失败的提示
+	 * @param obj
+	 * @return
+	 * @return: Message
+	 */
+	public Message errorMessage4Option(Object obj) {
+		return errorMessage(MessageConst.MESSAGE_ERROR_OPERATION, null, obj);
+	}
+
+	/**
+	 * 
 	 * @Title: dealJsonP
 	 * @Description: 处理ajax跨域请求的封装数据
 	 * @param json
@@ -422,5 +476,22 @@ public abstract class StandardController {
 	 */
 	public String dealJSONP(Message message) {
 		return dealJSONP(JSONUtils.toJSONString(message));
+	}
+
+	/**
+	 * 
+	 * @Title: publicKey
+	 * @Description: 公钥
+	 * @param request
+	 * @return
+	 * @return: Map<String,String>
+	 */
+	public Map<String, String> publicKey(HttpServletRequest request) {
+		RSAService rsaService = (RSAService) SpringUtils.getBean("rsaServiceImpl");
+		RSAPublicKey publicKey = rsaService.generateKey(request);
+		Map<String, String> data = new HashMap<String, String>();
+		data.put("modulus", Base64.encodeBase64String(publicKey.getModulus().toByteArray()));
+		data.put("exponent", Base64.encodeBase64String(publicKey.getPublicExponent().toByteArray()));
+		return data;
 	}
 }
