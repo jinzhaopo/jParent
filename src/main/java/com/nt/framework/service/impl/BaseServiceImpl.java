@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
@@ -164,6 +165,23 @@ public abstract class BaseServiceImpl<T extends Entity> implements BaseService<T
 		Example example = getExample(null, filters, orders);
 		return mapper.selectByExample(example);
 
+	}
+	
+	/**
+	 * 
+	 * @Title: getList
+	 * @Description: 根据条件查询排序(limit)
+	 * @param filters
+	 * @param orders
+	 * @param offset
+	 * @param limit
+	 * @return
+	 * @return: List<T>
+	 */
+	@Override
+	public List<T> getList(List<SearchFilter> filters, List<Order> orders, int offset, int limit){
+		Example example = getExample(null, filters, orders);
+		return mapper.selectByExampleAndRowBounds(example, new RowBounds(offset, limit));
 	}
 
 	/**

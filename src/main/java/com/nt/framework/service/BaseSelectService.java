@@ -82,6 +82,19 @@ public interface BaseSelectService<T extends Entity> {
 	/**
 	 * 
 	 * @Title: getList
+	 * @Description: 根据条件查询排序(limit)
+	 * @param filters
+	 * @param orders
+	 * @param offset
+	 * @param limit
+	 * @return
+	 * @return: List<T>
+	 */
+	List<T> getList(List<SearchFilter> filters, List<Order> orders, int offset, int limit);
+
+	/**
+	 * 
+	 * @Title: getList
 	 * @Description: 根据条件查找 ,用==进行匹配
 	 * @param t
 	 * @return
