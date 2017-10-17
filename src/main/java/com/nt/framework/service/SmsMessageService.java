@@ -16,7 +16,7 @@ import com.nt.framework.model.enumModel.MessageType;
  */
 public interface SmsMessageService extends BaseService<SmsMessage> {
 	/**
-	 * 发送短信接口(单条发送)
+	 * 发送短信接口
 	 * 
 	 * @param phoneNum
 	 *            短信号码

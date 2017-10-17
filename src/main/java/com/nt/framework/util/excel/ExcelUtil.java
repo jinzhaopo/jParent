@@ -188,7 +188,8 @@ public class ExcelUtil {
 			o = String.valueOf(c.getCellFormula());
 			break;
 		case Cell.CELL_TYPE_NUMERIC:
-			o = String.valueOf(c.getNumericCellValue());
+			//这边会有科学计数法的错误
+			o = String.valueOf(BigDecimal.valueOf(c.getNumericCellValue()).toString());
 			break;
 		case Cell.CELL_TYPE_STRING:
 			o = c.getStringCellValue().trim();
@@ -213,13 +214,13 @@ public class ExcelUtil {
 				row = sheet.getRow(i);
 				Object obj = clz.newInstance();
 				for (Cell c : row) {
+					// if (StringUtils.isBlank(c.getStringCellValue())) {
+					// break;
+					// }
+					int ci = c.getColumnIndex();
+					String mn = maps.get(ci).substring(3);
+					mn = mn.substring(0, 1).toLowerCase() + mn.substring(1);
 					try {
-						if (StringUtils.isBlank(c.getStringCellValue())) {
-							break;
-						}
-						int ci = c.getColumnIndex();
-						String mn = maps.get(ci).substring(3);
-						mn = mn.substring(0, 1).toLowerCase() + mn.substring(1);
 						BeanUtils.copyProperty(obj, mn, this.getCellValue(c));
 					} catch (Exception e) {
 						throw new RuntimeException("excel导入出错，行数: " + row.getRowNum() + ", 列数:" + c.getColumnIndex() + ", 值: " + this.getCellValue(c));
