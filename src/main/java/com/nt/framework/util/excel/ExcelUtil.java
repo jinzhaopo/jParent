@@ -214,9 +214,9 @@ public class ExcelUtil {
 				row = sheet.getRow(i);
 				Object obj = clz.newInstance();
 				for (Cell c : row) {
-					// if (StringUtils.isBlank(c.getStringCellValue())) {
-					// break;
-					// }
+					if (StringUtils.isBlank(getCellValue(c))) {
+						 break;
+					}
 					int ci = c.getColumnIndex();
 					String mn = maps.get(ci).substring(3);
 					mn = mn.substring(0, 1).toLowerCase() + mn.substring(1);

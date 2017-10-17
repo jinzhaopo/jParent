@@ -34,9 +34,9 @@ public class HttpMessageConvertersConfig {
 	@Bean
 	public HttpMessageConverters fastJsonHttpMessageConverters() {
 		FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
-		List<MediaType> supportedMediaTypes = new ArrayList<MediaType>();
-		supportedMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
-		fastConverter.setSupportedMediaTypes(supportedMediaTypes);
+//		List<MediaType> supportedMediaTypes = new ArrayList<MediaType>();
+//		supportedMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
+//		fastConverter.setSupportedMediaTypes(supportedMediaTypes);
 
 		FastJsonConfig fastJsonConfig = new FastJsonConfig();
 		fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
