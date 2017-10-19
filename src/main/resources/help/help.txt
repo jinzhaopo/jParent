@@ -1450,4 +1450,79 @@ GET
 查看基本追踪信息
  
 true
+
+
+package com.gaia.member;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.annotation.ComponentScan;
+
+//@ImportResource("classpath:applicationContext-*.xml")
+@SpringBootApplication
+@EnableConfigurationProperties
+@ComponentScan(basePackages = { "com.nt.framework", "com.gaia" })
+@ServletComponentScan(basePackages = { "com.nt.framework", "com.gaia.member" })
+@MapperScan(basePackages = { "com.gaia.member.mapper", "com.nt.framework.mapper" })
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+}
+
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<groupId>com.gaia.member</groupId>
+	<artifactId>ceo_member</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<modelVersion>4.0.0</modelVersion>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.nt</groupId>
+			<artifactId>nt_parent</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>ceo_member</finalName>
+		<plugins>
+			<!-- java编译插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>spring-milestone</id>
+			<url>http://repo.spring.io/libs-release</url>
+		</repository>
+	</repositories>
+</project>
  

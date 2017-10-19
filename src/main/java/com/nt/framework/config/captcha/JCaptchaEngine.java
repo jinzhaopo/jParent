@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import com.octo.captcha.component.image.backgroundgenerator.BackgroundGenerator;
 import com.octo.captcha.component.image.backgroundgenerator.FileReaderRandomBackgroundGenerator;
+import com.octo.captcha.component.image.backgroundgenerator.UniColorBackgroundGenerator;
 import com.octo.captcha.component.image.color.RandomListColorGenerator;
 import com.octo.captcha.component.image.fontgenerator.FontGenerator;
 import com.octo.captcha.component.image.fontgenerator.RandomFontGenerator;
@@ -37,15 +38,15 @@ public class JCaptchaEngine extends ListImageCaptchaEngine {
 	private static final Integer MIN_FONT_SIZE = 16;// 验证码最小字体
 	private static final Integer MAX_FONT_SIZE = 16;// 验证码最大字体
 	private static final String RANDOM_WORD = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";// 随机字符
-	private static final String IMAGE_PATH = "com/nt/framework/config/captcha/image/";// 随机背景图片路径
+	// private static final String IMAGE_PATH =
+	// "classPath*:com/nt/framework/config/captcha/image/";// 随机背景图片路径
 
 	// 验证码随机字体
-	private static final Font[] RANDOM_FONT = new Font[] { new Font("nyala", Font.BOLD, MIN_FONT_SIZE), new Font("Arial", Font.BOLD, MIN_FONT_SIZE), new Font("Bell MT", Font.BOLD, MIN_FONT_SIZE),
-			new Font("Credit valley", Font.BOLD, MIN_FONT_SIZE), new Font("Impact", Font.BOLD, MIN_FONT_SIZE) };
+	private static final Font[] RANDOM_FONT = new Font[] { new Font("nyala", Font.BOLD, MIN_FONT_SIZE), new Font("Arial", Font.BOLD, MIN_FONT_SIZE), new Font("Bell MT", Font.BOLD, MIN_FONT_SIZE), new Font("Credit valley", Font.BOLD, MIN_FONT_SIZE),
+			new Font("Impact", Font.BOLD, MIN_FONT_SIZE) };
 
 	// 验证码随机颜色
-	private static final Color[] RANDOM_COLOR = new Color[] { new Color(255, 255, 255), new Color(255, 220, 220), new Color(220, 255, 255), new Color(220, 220, 255), new Color(255, 255, 220),
-			new Color(220, 255, 220) };
+	private static final Color[] RANDOM_COLOR = new Color[] { new Color(255, 255, 255), new Color(255, 220, 220), new Color(220, 255, 255), new Color(220, 220, 255), new Color(255, 255, 220), new Color(220, 255, 220) };
 
 	// 生成验证码
 	@Override
@@ -64,9 +65,12 @@ public class JCaptchaEngine extends ListImageCaptchaEngine {
 		// filereaderrandombackgroundgenerator, decoratedrandomtextpaster)));
 		RandomListColorGenerator randomListColorGenerator = new RandomListColorGenerator(RANDOM_COLOR);
 
-		BackgroundGenerator backgroundGenerator = new FileReaderRandomBackgroundGenerator(IMAGE_WIDTH, IMAGE_HEIGHT, IMAGE_PATH);
+		// TODO 这边打成jar的时候路径找不到
 		// BackgroundGenerator backgroundGenerator = new
-		// UniColorBackgroundGenerator(IMAGE_WIDTH, IMAGE_HEIGHT, Color.BLUE);
+		// FileReaderRandomBackgroundGenerator(IMAGE_WIDTH, IMAGE_HEIGHT,
+		// IMAGE_PATH);
+		BackgroundGenerator backgroundGenerator = new UniColorBackgroundGenerator(IMAGE_WIDTH, IMAGE_HEIGHT, Color.BLUE);
+		System.out.println(Color.BLACK);
 
 		WordGenerator wordGenerator = new RandomWordGenerator(RANDOM_WORD);
 
