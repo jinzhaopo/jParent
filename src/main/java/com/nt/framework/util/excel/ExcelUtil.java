@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -200,6 +201,7 @@ public class ExcelUtil {
 		}
 		return o;
 	}
+	
 
 	private List<?> handlerExcel2Objs(Workbook wb, Class clz, int readLine, int tailLine) {
 		Sheet sheet = wb.getSheetAt(0);
